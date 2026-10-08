@@ -210,5 +210,6 @@ ${urls.map(({ lang, page }) => `<url><loc>${url(lang, page)}</loc><lastmod>${tod
 </urlset>
 `);
 writeFileSync(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
+writeFileSync(join(out, 'CNAME'), 'www.urbansoftware.co.kr\n'); // GitHub Pages 사용자 지정 도메인
 copyFileSync(join(root, 'assets', 'logo.svg'), join(out, 'assets', 'favicon.svg'));
 console.log(`built ${urls.length} pages + root, sitemap, robots -> docs/`);
